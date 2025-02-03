@@ -1,0 +1,5 @@
+# uncompyle6 version 3.9.2
+# Python bytecode version base 3.11 (3495)
+# Decompiled from: Python 3.11.9 (main, Apr 10 2024, 13:16:36) [GCC 13.2.0]
+# Embedded file name: solved.txt
+# Compiled at: 2024-12-05 22:47:58
