@@ -1,29 +1,15 @@
-#!/usr/bin/env python3
-
-import angr
+import angr 
+import sys 
 import claripy
 
-base_address = 0x400000
+p = angr.Project("921") 
+arg = claripy.BVS('arg', 52*0x20)
 
-success_address = 0x603802
-failure_address = 0x60381A
+good = 0x4035c2 
+bad = [0x4035e0,0x400401,0x400456] 
+state = p.factory.entry_state(args=['./921', arg]) 
+sm = p.factory.simulation_manager(state) 
+print(sm.explore(find=good, avoid=bad))
 
-flag_lenght = 52
-
-Project = angr.Project("./921", main_opts={'base_addr' : base_address})
-Flag_chars = [claripy.BVS(f"flag_charP{i}", 8) for i in range(flag_lenght)]
-
-flag = claripy.Concat(Flag_chars + [claripy.BVV(b"\n")])
-
-state = Project.factory.full_init_state(
-        args = ["./921"],
-        add_options = angr.options.unicorn,
-        stdin = flag,
-)
-
-sim_manager = Project.factory.simulation_manager(state)
-sim_manager.explore(find=success_address, avoid=failure_address)
-
-if len(sim_manager.found) > 0:
-    for found in sim_manager.found:
-        print(found.posix.dumps())
+result = sm.found[0] 
+print("argv1 = {!r}".format(result.solver.eval(arg, cast_to=bytes)))
