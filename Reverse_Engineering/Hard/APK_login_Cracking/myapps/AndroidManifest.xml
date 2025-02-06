@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.risecid.app" platformBuildVersionCode="28" platformBuildVersionName="Q">
+    <application android:allowBackup="true" android:debuggable="false" android:icon="@drawable/MT_Bin" android:label="@string/MT_Bin" android:name="com.mcal.apkprotector.ProxyApplication" android:resizeableActivity="true" android:theme="@style/AppTheme">
+        <activity android:label="@string/MT_Bin" android:name=".LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity"/>
+        <meta-data android:name="Secure" android:value="恈怑恽恒恞恖怑怉怑恞恊恒恃恃恀怑怟怑恣恒恐恘恒恔恖怑怉怑恐恜恞思恁恚恀恖恐恚恗思恒恃恃怑怟怑恥恽恒恞恖怑怉怑怂思怃怑怟怑恟恆恐恘恊恣恒恇恐恛恖恁恰恛恖恐恘恱恜恜恟恖恒恝怑怉恕恒恟恀恖怟怑恠恚恔恝恰恛恖恐恘恖恁怑怉恕恒恟恀恖怟怑恡恜恜恇恰恛恖恐恘恖恁怑怉恕恒恟恀恖怟怑恾恒恔恚恀恘恰恛恖恐恘恖恁怑怉恕恒恟恀恖怟怑恫恃恜恀恖恗恰恛恖恐恘恖恁怑怉恕恒恟恀恖怟怑恗恖恑恆恔恰恛恖恐恘恱恜恜恟恖恒恝怑怉恕恒恟恀恖怟怑恺恝恀恇恒恟恟恖恁恰恛恖恐恘恖恁怑怉恕恒恟恀恖怟怑恶恞恆恰恛恖恐恘恖恁怑怉恕恒恟恀恖怟怑恲恝恇恚恾恜恗怑怉恕恒恟恀恖怟怑恥恰恜恗恖怑怉怂怟怑恻恜恜恘恰恛恖恐恘恖恁怑怉恕恒恟恀恖怟怑恗恖恅恚恐恖恿恜恐恘恱恜恜恟恖恒恝怑怉恕恒恟恀恖怟怑恗恖恅恚恐恖恿恜恐恘恠恇恁恚恝恔怑怉怑怑怟怑恰恁恒恀恛恰恒恇恐恛恖恁怑怉恕恒恟恀恖怟怑恐恛恖恐恘恥恣恽恱恜恜恟恖恒恝怑怉恕恒恟恀恖怟怑恤恖恟恐恜恞恖怑怉恕恒恟恀恖怟怑恤恖恟恐恜恞恖恾恜恗恖怑怉怑恧恼恲恠恧怑怟怑恤恖恟恐恜恞恖恾恀恔怑怉怑恣恜恄恖恁恖恗怓恑恊怓恲恃恘恣恁恜恇恖恐恇恜恁怑怟怑恧恚恇恟恖恽恜恇恚恕恚恐恒恇恚恜恝怑怉怑恠恖恐恆恁恚恇恊怓恲恃恘恣恁恜恇恖恐恇恜恁怑恎"/>
+        <activity android:name="com.mcal.apkprotector.activities.CopyClipActivity"/>
+    </application>
+</manifest>

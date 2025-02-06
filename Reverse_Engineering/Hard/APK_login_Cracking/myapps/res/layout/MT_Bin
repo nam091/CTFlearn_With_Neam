@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textAppearance="?android:textAppearanceSmall" android:layout_gravity="left" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="username" />
+    <EditText android:id="@id/MT_Bin" android:layout_width="fill_parent" android:layout_height="wrap_content" android:ems="10" />
+    <TextView android:textAppearance="?android:textAppearanceSmall" android:layout_gravity="left" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="password" />
+    <EditText android:id="@id/APKTOOL_DUPLICATE_id_0x7f060001" android:layout_width="fill_parent" android:layout_height="wrap_content" android:ems="10" android:inputType="textPassword" />
+    <Button android:id="@id/APKTOOL_DUPLICATE_id_0x7f060002" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="login" />
+</LinearLayout>
