@@ -9,7 +9,7 @@ Please help me crack the login and gain access to the main app. Good luck!
 ![Login Screen](image/login_screen.png)
 - Từ đây mình đang có hai hướng: 
 	- Tìm ra `username` và `password`.
-	- Bypass trực tiếp để lấy flag.
+	- Bypass để lấy flag.
 1. Tìm `username` và `password`.
 - Mình sử dụng `jadx-gui` để mổ file `apk` ra cho dễ đọc source code: 
 ![source code trong jadx](image/source_code_jadx.png)
@@ -23,13 +23,14 @@ NOTIFICATION
 __welcome_message_shown_
 ```
 - Và mình nhận được các giá trị này, cảm thấy đã sai nên mình đọc lại code trước khi tìm `str2` thì thấy chắc chắn không thể tìm thấy `username` && `password` trong các source code.
-2. Bypass
-- Mình mở file `AndroidManifest.xml` để tìm tên `class`, nhận thấy `.LoginActivity` khá khả nghi nên mình sẽ thử chạy nó bằng `adb` xem có thể bypass được gì không
+1. Bypass
+![AndroidManifest.xml](image/AndroidManifest.png)
+- Mình mở file `AndroidManifest.xml` để tìm tên `class`, nhận thấy `.LoginActivity` khá khả nghi nên mình sẽ thử chạy nó bằng `adb`:
 ![Start .LoginActivity](image/start_LoginAct.png)
 - Vẫn không nhận được gì cả, chỉ là màn hình login
 - Tiếp tục thử class `.MainActivity` vì nó cũng là một gợi ý của đầu bài
 ![Start .MainActivity](image/Start_MainActivity.png)
-- Done!!!, chúng ta đã tìm thấy flag: 
+- Và Done!!! , chúng ta đã tìm thấy flag: 
 ```
 CTFlearn{7h4nk5Br00}
 ```
