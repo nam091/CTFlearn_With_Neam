@@ -1,0 +1,69 @@
+body
+{
+  font-family: "Calibri";
+  padding: .2rem;
+  background: burlywood;
+}
+
+textarea
+{
+  box-sizing: border-box;
+  width: 100%;
+  height: 20rem;
+}
+
+input
+{
+  margin-top: .2rem;
+}
+
+button
+{
+  background: linear-gradient(to bottom, #A08323, #775D28);
+  padding: .4rem 1rem;
+  color: white;
+  border-radius: 2px;
+  border-color: saddlebrown;
+}
+
+button:active
+{
+  background: linear-gradient(to top, #A08323, #775D28);
+}
+
+input, textarea
+{
+  padding: .3rem;
+  border-radius: 3px;
+  border-width: 2px;
+  border-color: gray;
+  background: beige;
+}
+
+.spacing
+{
+  margin-top: 1rem;
+}
+
+.col-text
+{
+  box-sizing: border-box;
+  width: 100%;
+  display: inline-block;
+}
+
+.col-head
+{
+  width: 7rem;
+  display: inline-block;
+}
+
+.error
+{
+  color: red;
+}
+
+.good
+{
+  color: green;
+}

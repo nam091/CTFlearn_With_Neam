@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Obfuscation</title>
+    <script src="verify.js"></script>
+    <link href="index.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <h1>Our Super Secure Message Authentication Code!</h1>
+    <div class="spacing">
+      We created a super secure message authentication code (MAC)! You must enter
+      a message, a password, and the resulting signature in the spaces below. We
+      intercepted <a href="code.dat">this garbled message</a> (Signature is 
+      <code>g6Gj&lt;bQ\w</code>). Could you figure out the password used in 
+      signing this message? We believe this algorithm is so secure, we will offer 
+      a bounty of $3.5M USD if you manage to solve!
+    </div>
+    <div class="spacing">
+      Enter message:<br>
+      <textarea id="msg" placeholder="Message Here!"></textarea>
+    </div>
+    
+    <div class="spacing">
+      <span class="col-head">Enter password:</span>
+      <input class="col-text" id="code" placeholder="**********">
+    </div>
+    <div>
+      <span class="col-head">Enter signature:</span>
+      <input class="col-text" id="sign" placeholder="xxxxxxxxx">
+    </div>
+    <div class="spacing">
+      <button onclick="check()">Verify Message</button><br>
+      <span id="resp"></span>
+    </div>
+    
+    <!-- Start of StatCounter Code for Default Guide -->
+    <script type="text/javascript">
+    var sc_project=11382210; 
+    var sc_invisible=1; 
+    var sc_security="c1343c8c"; 
+    var scJsHost = (("https:" == document.location.protocol) ?
+    "https://secure." : "http://www.");
+    document.write("<sc"+"ript type='text/javascript' src='" +
+    scJsHost+
+    "statcounter.com/counter/counter.js' async></"+"script>");
+    </script>
+    <noscript><div class="statcounter"><a title="web statistics"
+    href="http://statcounter.com/" target="_blank"><img
+    class="statcounter"
+    src="//c.statcounter.com/11382210/0/c1343c8c/1/" alt="web
+    statistics"></a></div></noscript>
+    <!-- End of StatCounter Code for Default Guide -->
+  </body>
+</html>
