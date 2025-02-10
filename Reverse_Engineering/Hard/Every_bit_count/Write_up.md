@@ -11,7 +11,7 @@ Note: Solution with cool effects shared in comment.
 - Mở file bằng `IDA` ta thấy đoạn code chỉ xử lý `password` bằng hàm một câu lệnh `If` duy nhất, đoạn code khá dài nhưng mình cắt một đoạn trong ảnh dưới:
 ![Pseudocode](image/source_code_1.png)
 - Câu lệnh lấy ngẫu nhiên các ký tự của `password` thực hiện phép `&` với các giá trị `0x20`, `0x10`, `0x80`, `0x40`,... 
-- Ta sẽ viết script để thực hiện `Brute forces` (Code này mình tham khảo Wu của **ebouteillon**
+- Ta sẽ viết script để thực hiện `Brute forces` (Code này mình tham khảo Wu của **ebouteillon**)
 ```
 #/usr/bin/env python3
 
