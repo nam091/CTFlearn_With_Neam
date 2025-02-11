@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Obfuscation</title>
-    <script src="verify.js"></script>
+    <script src="verify_3.js"></script>
     <link href="index.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
@@ -33,7 +33,10 @@
     <div class="spacing">
       <button onclick="check()">Verify Message</button><br>
       <span id="resp"></span>
-    </div>
+      <div class="spacing" id="console-output-area" style="border: 1px solid black; padding: 10px; margin-top: 10px; background-color: #f0f0f0; font-family: monospace; font-size: 14px; overflow-wrap: break-word;">
+        <b>Console Output:</b>
+        <div id="console-output"></div>
+      </div>
     
     <!-- Start of StatCounter Code for Default Guide -->
     <script type="text/javascript">

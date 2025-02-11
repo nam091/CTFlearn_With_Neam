@@ -1,4 +1,3 @@
-
 msg = ["You fail!",
 "Seriously?",
 "Ha! Ha! You wish it was right!",
@@ -15,7 +14,7 @@ function check()
     $ = document.getElementById.bind(document);
     j = window.d0cument;
     check2();
-    
+
     $("resp").innerText = "Correct! (Oh gosh! I guess you've done it...)";
     $("resp").className = "good";
   }
@@ -35,12 +34,12 @@ function check2()
   var m_w = 123456789;
   var m_z = 987654321;
   var mask = 0xffffffff;
-  
+
   // Takes any integer
   function seed(i) {
       m_w = i;
   }
-  
+
   function random()
   {
       m_z = (36969 * (m_z & 65535) + (m_z >> 16)) & mask;
@@ -48,7 +47,7 @@ function check2()
       var result = ((m_z << 16) + m_w) & mask;
       return result
   }
-  
+
   //Ignore this code... This is the magical part of this verifier
   var source=[
     "charCodeAt",
@@ -75,97 +74,96 @@ function check2()
     "floor",
     "sign",
     "msg"];
-  function hash(_0x7a95x2){
-    var _0x7a95x3=0xffffffff;
+  function hash(inputString){
+    var hashMask=0xffffffff;
     return Array.prototype.reduce.call(
-      _0x7a95x2,
-      function(a,b){return (a* 31+ b[source[0]](0))& _0x7a95x3},
+      inputString,
+      function(accumulator,char){return (accumulator* 31+ char["charCodeAt"](0))& hashMask},
       0
     )
   }
-  function xor(_0x7a95x7,_0x7a95x8){
-    var z=source[4];
-    for(var i=0;i< _0x7a95x7.length;i++){
-      z+= String[source[6]](_0x7a95x7[source[0]](i)^ _0x7a95x8)
+  function xor(text,key){
+    var z="";
+    for(var i=0;i< text.length;i++){
+      z+= String["fromCharCode"](text["charCodeAt"](i)^ key)
     };
     return z
-  }function xor2(_0x7a95x7,_0x7a95x8){
-    var z=source[4];
-    for(var i=0;i< _0x7a95x7.length;i++){
-      z+= String[source[6]](_0x7a95x7[source[0]](i)^ (_0x7a95x8[source[0]](i% _0x7a95x8.length)& 15))
+  }function xor2(text,keyString){
+    var z="";
+    for(var i=0;i< text.length;i++){
+      z+= String["fromCharCode"](text["charCodeAt"](i)^ (keyString["charCodeAt"](i% keyString.length)& 15))
     };
     return z
   }
-  function decode(decoded,_0x7a95xe,_0x7a95xf){
-    x= _0x7a95xf% 2;
-    y= _0x7a95xe[source[0]]((_0x7a95xf- x)/ 2);
+  function decode(decoded,decodeKey,index){
+    x= index% 2;
+    y= decodeKey["charCodeAt"]((index- x)/ 2);
     if(!x){
       y>>= 4};
       y&= 0xf;
     return xor(decoded,y)
     }
-    function runcode(_0x7a95x11,decoded,_0x7a95xe){
-      decoded= decode(decoded,_0x7a95xe,0);
+    function runcode(signValue,decoded,decodeKey){
+      decoded= decode(decoded,decodeKey,0);
       try{
-        var _0x7a95x12={
-          x:decoded,
-          d:decode,
-          k:_0x7a95xe,
-          o:xor2,
-          s:_0x7a95x11
+        var contextObject={
+          inputString:decoded,
+          decodeFunction:decode,
+          key:decodeKey,
+          xor2Function:xor2,
+          result:signValue
         };
-        var _0x7a95xf=0;
-        for(var i=0;i< _0x7a95xe.length* 2;i++){ 
-          new Function(s,_0x7a95x12[x])(_0x7a95x12)
-        };
-          return _0x7a95x12[s]
+        var index=0;
+        for(var i=0;i< decodeKey.length* 2;i++){
+          new Function("s",contextObject["inputString"])(contextObject)}; // Dictionary contextObject
+          return contextObject["result"]
         }catch(e){
-          throw bad
+          throw "bad"
         }
       }
       seed(18458);
       j++;
-      input= $(source[11])[value];
+      input= $("code")["value"];
       var a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z;
       a= 1;
       TRUE= (j = j);
       FALSE=  !TRUE;
-      b= Math[source[12]](++a,a+  ++a+ TRUE) - FALSE + TRUE;
-      c= Math[source[12]](a++ - FALSE,a+= FALSE+ FALSE)- FALSE;
+      b= Math.pow(++a,a+  ++a+ TRUE) - FALSE + TRUE;
+      c= Math.pow(a++ - FALSE,a+= FALSE+ FALSE)- FALSE;
       d= (random()+ random())& b;
-      if(!input[source[14]](source[13])|| input[source[15]](-FALSE) != source[16] || hash(input)!=  -1996285287 || input.length!= (random()& c)){
-        throw bad
+      if(!input.startsWith("flag{")|| input.substr(-FALSE) != "}" || hash(input)!=  -1996285287 || input.length!= (random()& c)){
+        throw "bad"
       };
       f= random()& b- d;
-      input= input[source[15]](a)[source[17]](source[16])[+TRUE];
-      if(!/^[A-Za-z0-9_]+$/[source[18]](input)){
-        throw bad
+      input = input.substr(a).split("}")[+TRUE];
+      if(!/^[A-Za-z0-9_]+$/["test"](input)){
+        throw "bad"
       };
       f*= f;
-      input= input[source[17]](source[19]);
+      input= input.split("_");
       if(input.length!= f|| input[+FALSE].length!= f- FALSE- TRUE|| input[+FALSE][+FALSE] != 'R'){
-        throw bad
+        throw "bad"
       };
       try{
         seed(parseInt(input[TRUE+ TRUE]));
         g= ~random()^ hash(input[FALSE+ FALSE]) ^ hash(input[f- FALSE+ TRUE]);
-        console[source[20]](g);
+        console["log"](g);
         if(g!= 1865600952){
-          throw bad
+          throw "bad"
         }
       }
       catch(e){
-        throw bad
+        throw "bad"
       };
         seed(97632000)
-        e= Math[source[21]](b/ (FALSE- TRUE+ FALSE));
+        e= Math["floor"](b/ (FALSE- TRUE+ FALSE));
         c= (random()>> (e- TRUE+ FALSE))& b;
         d= (random()>> (e- TRUE+ FALSE))& b;
         if(input[FALSE+ FALSE- TRUE].length!= c- d){
-          throw bad
+          throw "bad"
         };
-        if(input[d]!= runcode($(sign)[value],xor($(msg)[value],c- d),input[FALSE+ FALSE]))
+        if(input[d]!= runcode($( "sign")["value"],xor($( "msg")["value"],c- d),input[FALSE+ FALSE]))
           {
-            throw bad
+            throw "bad"
           }
 }
